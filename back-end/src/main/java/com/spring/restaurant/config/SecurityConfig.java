@@ -20,6 +20,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		  http.authorizeRequests().anyRequest().permitAll()
         .and().formLogin().and().httpBasic();  */
 		
+		http.authorizeRequests().anyRequest().denyAll()
+        .and().formLogin().and().httpBasic();
+		
+		/*
 		http.authorizeRequests()
 		.antMatchers("/football/start").authenticated()
 		.antMatchers("/basketball/start").authenticated()
@@ -28,7 +32,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.antMatchers("/about/start").permitAll()
 		.antMatchers("/connect/start").permitAll()
 	    .and().formLogin().and().httpBasic();
-		
+		*/
 	}
 
 }
